@@ -1,0 +1,7 @@
+- hosts: localhost
+  gather_facts: no
+  strategy: free
+
+  tasks:
+    - debug:
+        msg: "{{ lookup('pipe', 'date -d \"1 day ago\" +\"%Y%m%d%H%M.%S\"') }}"
