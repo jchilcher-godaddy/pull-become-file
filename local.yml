@@ -7,5 +7,6 @@
     - shell:
         cmd: uptime
       register: uptime_res
+      become: true
     - debug:
         var: uptime_res
