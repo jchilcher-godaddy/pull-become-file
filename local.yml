@@ -3,5 +3,9 @@
   strategy: free
 
   tasks:
+
+    - shell:
+        cmd: uptime
+      register: uptime_res
     - debug:
-        msg: "{{ lookup('pipe', 'date -d \"1 day ago\" +\"%Y%m%d%H%M.%S\"') }}"
+        var: uptime_res
